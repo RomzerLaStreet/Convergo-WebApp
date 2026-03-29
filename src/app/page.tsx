@@ -7,6 +7,8 @@ import { getLocalUser, saveLocalUser, createUserId, type LocalUser } from "@/lib
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
+import { Suspense } from "react";
+
 const EMOJIS = [
   "😊", "😎", "🤩", "🥳", "😄", "🙂", "😏", "🤓", "😇", "🥰",
   "😜", "🤗", "😴", "😤", "🤔", "🫠", "🥸", "😈", "👻", "🤖"
@@ -37,7 +39,7 @@ function GroupCard({ group }: { group: any }) {
   );
 }
 
-export default function Home() {
+function HomeContent() {
   const [user, setUser] = useState<LocalUser | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
@@ -218,5 +220,13 @@ export default function Home() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={null}>
+      <HomeContent />
+    </Suspense>
   );
 }
