@@ -1,3 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+:root {
+  --accent: #534AB7;
+  --accent-dim: #EEEDFE;
+  --ink: #1A1714;
+  --muted: #888580;
+  --surface: #F7F6F3;
+  --card: #FFFFFF;
+  --border: #E8E6E1;
+  --av: #1D9E75;
+  --av-bg: #F0FAF6;
+  --fl: #D97706;
+  --fl-bg: #FFFBEB;
+  --bu: #DC2626;
+  --bu-bg: #FEF2F2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--surface);
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
