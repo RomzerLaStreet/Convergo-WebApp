@@ -198,18 +198,20 @@ function HomeContent() {
         </div>
       </header>
 
-      {/* Bandeau Convergence fictif pour le design */}
-      <div className="bg-[#534AB7] rounded-[12px] p-[14px_16px] mb-8">
-        <span className="block text-[11px] font-semibold text-[#AFA9EC] uppercase tracking-wider mb-1">
-          ✦ Prochaine convergence
-        </span>
-        <div className="flex items-center justify-between">
-          <span className="text-[15px] font-bold text-white">Vendredi 12 Mars · Soirée</span>
-          <span className="bg-white text-[#534AB7] rounded-full p-[4px_12px] text-[12px] font-semibold">
-            Voir →
+      {/* Bandeau Convergence fictif pour le design - Affiché uniquement si des groupes existent */}
+      {groups && groups.length > 0 && (
+        <div className="bg-[#534AB7] rounded-[12px] p-[14px_16px] mb-8">
+          <span className="block text-[11px] font-semibold text-[#AFA9EC] uppercase tracking-wider mb-1">
+            ✦ Prochaine convergence
           </span>
+          <div className="flex items-center justify-between">
+            <span className="text-[15px] font-bold text-white">Vendredi 12 Mars · Soirée</span>
+            <span className="bg-white text-[#534AB7] rounded-full p-[4px_12px] text-[12px] font-semibold">
+              Voir →
+            </span>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="mb-10">
         <h2 className="text-[11px] uppercase tracking-[0.5px] text-[#888580] font-semibold mb-4">
